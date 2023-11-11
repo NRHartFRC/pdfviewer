@@ -5,16 +5,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your PDF Viewer</title>
+  <title>SL-A4-004 - Hyundai HT421</title>
   <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
 </head>
 <body>
   <script>
     // Specify the URL of the PDF file
     var pdfUrl = "https://nrhartfrc.github.io/pdfviewer/SL-A4-004 - Hyundai HT421.pdf";
+    var encodedPdfUrl = encodeURIComponent(pdfUrl);
 
     // Fetch the PDF document
-    pdfjsLib.getDocument(pdfUrl).then(function (pdf) {
+    pdfjsLib.getDocument(encodedPdfUrl).then(function (pdf) {
       // Get the first page
       pdf.getPage(1).then(function (page) {
         var canvas = document.getElementById("pdfCanvas");

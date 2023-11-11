@@ -1,1 +1,33 @@
-<iframe src="https://nrhartfrc.github.io/pdfviewer/SL-A4-004 - Hyundai HT421.pdf" width="100%" height="850px"></iframe>
+<!-- <iframe src="https://nrhartfrc.github.io/pdfviewer/SL-A4-004 - Hyundai HT421.pdf" width="100%" height="850px"></iframe> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your PDF Viewer</title>
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+<body>
+  <script>
+    // Specify the URL of the PDF file
+    var pdfUrl = "https://nrhartfrc.github.io/pdfviewer/SL-A4-004 - Hyundai HT421.pdf";
+
+    // Fetch the PDF document
+    pdfjsLib.getDocument(pdfUrl).then(function (pdf) {
+      // Get the first page
+      pdf.getPage(1).then(function (page) {
+        var canvas = document.getElementById("pdfCanvas");
+
+        // Set the canvas dimensions to the PDF page dimensions
+        canvas.width = page.view[2];
+        canvas.height = page.view[3];
+
+        // Render the PDF page on the canvas
+        page.render({ canvasContext: canvas.getContext("2d") });
+      });
+    });
+  </script>
+  <canvas id="pdfCanvas" style="width: 100%; height: 100vh;"></canvas>
+</body>
+</html>

@@ -3,10 +3,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SL-A4-004 - Hyundai HT421</title>
-  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SL-A4-004 - Hyundai HT421</title>
+    <!-- give time to load with async -->
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js" async></script>
+
+    <!-- event listener -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof pdfjsLib === 'undefined') {
+        console.error('Failed to load PDF.js library');
+        } else {
+        // Your existing PDF.js code here
+        }
+    });
+    </script>
+
 </head>
 <body>
   <script>

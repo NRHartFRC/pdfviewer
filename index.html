@@ -30,12 +30,20 @@
     var pdfUrl = "https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf";
 
     pdfjsLib.getDocument(pdfUrl).then(function (pdf) {
+      console.log("PDF loaded successfully:", pdf);
+
       pdf.getPage(1).then(function (page) {
+        console.log("Page loaded successfully:", page);
+
         var canvas = document.getElementById("pdfCanvas");
         canvas.width = page.view[2];
         canvas.height = page.view[3];
         page.render({ canvasContext: canvas.getContext("2d") });
+      }).catch(function (error) {
+        console.error("Error loading page:", error);
       });
+    }).catch(function (error) {
+      console.error("Error loading PDF:", error);
     });
   </script>
 </body>

@@ -18,14 +18,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SL-AD-001</title>
-  <!-- <script src="https://mozilla.github.io/pdf.js/gh-pages/build/pdf.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.189/pdf.min.mjs" async></script> -->
-  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.189/pdf.min.mjs"></script>
+  <title>PDF Viewer</title>
+  <!-- Load PDF.js library -->
+  <script type="module">
+    import { PDFJS as pdfjsLib } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.189/build/pdf.min.mjs';
 
-</head>
-<body>
-  <script>
     // Specify the URL of the PDF file
     var pdfUrl = "https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf";
 
@@ -45,5 +42,9 @@
       });
     });
   </script>
+</head>
+<body>
+  <!-- Your body content here -->
 </body>
 </html>
+

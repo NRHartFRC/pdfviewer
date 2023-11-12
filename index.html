@@ -1,6 +1,7 @@
 <!-- <embed src="/pdfviewer/SL-A4-004 - Hyundai HT421.pdf" width="100%" height="745px" /> -->
 
-<!DOCTYPE html>
+<!-- Below Solution Works -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,11 +9,38 @@
   <title>SL-AD-004 HT421</title>
 </head>
 <body>
-  <!-- QR Code -->
-  <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://docs.google.com/gview?url=https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf&embedded=true" alt="QR Code"> -->
-
-  <!-- Embed PDF using Google Docs Viewer -->
   <iframe src="https://docs.google.com/gview?url=https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf&embedded=true" style="width:100%; height:100vh;" frameborder="0"></iframe>
 </body>
-</html>
+</html> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Viewer</title>
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+<body>
+  <script>
+    // Specify the URL of the PDF file
+    var pdfUrl = "https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf";
+
+    // Fetch the PDF document
+    pdfjsLib.getDocument(pdfUrl).then(function (pdf) {
+      // Get the first page
+      pdf.getPage(1).then(function (page) {
+        var canvas = document.createElement("canvas");
+        document.body.appendChild(canvas);
+
+        // Set the canvas dimensions to the PDF page dimensions
+        canvas.width = page.view[2];
+        canvas.height = page.view[3];
+
+        // Render the PDF page on the canvas
+        page.render({ canvasContext: canvas.getContext("2d") });
+      });
+    });
+  </script>
+</body>
+</html>

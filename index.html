@@ -1,7 +1,7 @@
 <!-- <embed src="/pdfviewer/SL-A4-004 - Hyundai HT421.pdf" width="100%" height="745px" /> -->
 
 <!-- Below Solution Works -->
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,43 +11,4 @@
 <body>
   <iframe src="https://docs.google.com/gview?url=https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf&embedded=true" style="width:100%; height:100vh;" frameborder="0"></iframe>
 </body>
-</html> -->
-
-<!-- <embed src="/pdfviewer/SL-A4-004 - Hyundai HT421.pdf" width="100%" height="100%" type="application/pdf"> -->
-
-<!-- <object data="https://nrhartfrc.github.io/pdfviewer/SL-A4-004%20-%20Hyundai%20HT421.pdf" width="100%" height="100%" type='application/pdf'></object> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDF Viewer</title>
-  <!-- Load PDF.js library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.189/build/pdf.min.js"></script>
-</head>
-<body>
-  <!-- Create a canvas to render the PDF -->
-  <canvas id="pdfCanvas" style="width: 100%; height: 100vh;"></canvas>
-
-  <script>
-    // Check if pdfjsLib is already defined (possibly due to a conflict)
-    if (typeof pdfjsLib === 'undefined') {
-      // If not defined, try to import it
-      import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.189/build/pdf.min.mjs';
-    }
-  
-    // Continue with your PDF.js code
-    var pdfUrl = "https://nrhartfrc.github.io/pdfviewer/SL-A4-004 - Hyundai HT421.pdf";
-  
-    pdfjsLib.getDocument(pdfUrl).then(function (pdf) {
-      pdf.getPage(1).then(function (page) {
-        var canvas = document.getElementById("pdfCanvas");
-        canvas.width = page.view[2];
-        canvas.height = page.view[3];
-        page.render({ canvasContext: canvas.getContext("2d") });
-      });
-    });
-  </script>
-</body>
 </html>
-  

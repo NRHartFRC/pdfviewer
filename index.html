@@ -255,8 +255,8 @@
   <iframe id="pdf-js-viewer" src="" title="webviewer" frameborder="0" width="100%" height="100%"></iframe>
 
   <script>
-    // Get the endpoint from the current URL added boolean or condition
-    const endpoint = window.location.pathname || '/';
+    // Get the endpoint from the current URL
+    const endpoint = window.location.pathname;
 
     // Define the base path for your PDF files
     const basePath = '/pdfviewer';
@@ -272,7 +272,8 @@
     };
 
     // Check for the root case and handle redirection
-    if (endpoint === '/') {
+    // changed '/' to '/pdfviewer'
+    if (endpoint === '/pdfviewer') {
       document.getElementById('pdf-js-viewer').src = `/pdfviewer/web/viewer.html?file=${basePath}/${pdfFiles['/']}#page=1#zoom=automatic-zoom`;
     } else {
       // Construct the URL for the PDF file based on the endpoint

@@ -26,7 +26,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HT421</title>
+  <title>JSK37U</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html,
@@ -55,6 +55,54 @@
     const pdfFiles = {
       '/assets/pdf/': 'SL-A4-004%20-%20Hyundai%20HT421.pdf',  // Default file at the base path
       '/assets/pdf/install/': 'install.pdf',
+      // Add more mappings as needed
+    };
+
+    // Construct the URL for the PDF file based on the endpoint
+    const pdfFile = pdfFiles[endpoint];
+    const pdfUrl = `${basePath}/${pdfFile}`;
+
+    // Set the iframe source to display the PDF
+    document.getElementById('pdf-js-viewer').src = `/pdfviewer/web/viewer.html?file=${pdfUrl}#page=1#zoom=automatic-zoom`;
+  </script>
+</body>
+</html>
+
+<!-- production -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSK37U</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="pdf-js-viewer" src="" title="webviewer" frameborder="0" width="100%" height="100%"></iframe>
+
+  <script>
+    // Get the endpoint from the current URL
+    const endpoint = window.location.pathname;
+
+    // Define the base path for your PDF files
+    const basePath = '/pdfviewer/';
+
+    // Map each endpoint to the corresponding PDF file
+    const pdfFiles = {
+      '/assets/pdf/': 'SL-A4-004%20-%20Hyundai%20HT421.pdf',  // Default file at the base path
+      '/assets/pdf/install/': 'install.pdf',
       '/assets/pdf/operate/': 'operate.pdf',
       '/assets/pdf/maintain/': 'maintain.pdf',
       '/assets/pdf/troubleshoot/': 'troubleshoot.pdf',
@@ -68,4 +116,4 @@
     document.getElementById('pdf-js-viewer').src = `/pdfviewer/web/viewer.html?file=${pdfUrl}#page=1#zoom=automatic-zoom`;
   </script>
 </body>
-</html>
+</html> -->

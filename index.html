@@ -15,9 +15,62 @@
       height: 100%;
       border: none;
     }
+
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    #header {
+      color: #000;
+      text-align: left;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+    }
+
+    #pdf-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    #pdf-links li {
+      margin-bottom: 10px;
+    }
+
+    #pdf-links a {
+      text-decoration: none;
+      color: #ff8c00;
+    }
+
+    #pdf-links a:hover {
+      text-decoration: underline;
+    }
+
+    #pdf-links span {
+      color: #0095ff;
+      font-weight: bold;
+      margin-left: 5px;
+    }
   </style>
 </head>
 <body>
+  <div id="container">
+    <div id="header">JSK37U</div>
+    
+    <ul id="pdf-links">
+      <li><a href="/pdfviewer/JSK37U.pdf">Product Overview</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/install/install.pdf">Installation Instructions</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/operate/operate.pdf">Operation Instructions</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/maintain/maintain.pdf">Maintenance Procedures</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/troubleshoot/troubleshoot.pdf">Quick Troubleshooting Guide</a><span>[PDF]</span></li>
+    </ul>
+  </div>
   <iframe id="pdf-js-viewer" src="/pdfviewer/web/viewer.html?file=/pdfviewer/assets/pdf/JSK37U.pdf#page=1#zoom=automatic-zoom" title="webviewer" frameborder="0" width="100%" height="100%"></iframe>
 </body>
 </html>

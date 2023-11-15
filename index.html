@@ -22,7 +22,10 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+
+
+<!-- root directory does not load the JSK37U.pdf as it does above -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -69,4 +72,110 @@
     document.getElementById('pdf-js-viewer').src = `/pdfviewer/web/viewer.html?file=${pdfUrl}#page=1#zoom=automatic-zoom`;
   </script>
 </body>
+</html> -->
+
+<!-- using landing page formatting -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSK37U</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #header {
+      color: #000;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #pdf-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    #pdf-links li {
+      margin-bottom: 10px;
+    }
+
+    #pdf-links a {
+      text-decoration: none;
+      color: #ff8c00;
+    }
+
+    #pdf-links a:hover {
+      text-decoration: underline;
+    }
+
+    #pdf-links span {
+      color: #0095ff;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">JSK37U</div>
+    
+    <ul id="pdf-links">
+      <li><a href="/pdfviewer/">Default PDF</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/install/">Installation Guide</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/operate/">Operation Manual</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/maintain/">Maintenance Guide</a><span>[PDF]</span></li>
+      <li><a href="/pdfviewer/assets/pdf/troubleshoot/">Troubleshooting</a><span>[PDF]</span></li>
+    </ul>
+  </div>
+
+  <iframe id="pdf-js-viewer" src="" title="webviewer" frameborder="0" width="100%" height="100%"></iframe>
+
+  <script>
+    // Get the endpoint from the current URL
+    const endpoint = window.location.pathname;
+
+    // Define the base path for your PDF files
+    const basePath = '/pdfviewer';
+
+    // Map each endpoint to the corresponding PDF file
+    const pdfFiles = {
+      '/': 'JSK37U.pdf',  // Root case
+      '/assets/pdf/install/': 'install.pdf',
+      '/assets/pdf/operate/': 'operate.pdf',
+      '/assets/pdf/maintain/': 'maintain.pdf',
+      '/assets/pdf/troubleshoot/': 'troubleshoot.pdf',
+      // Add more mappings as needed
+    };
+
+    // Check for the root case and handle redirection
+    if (endpoint === '/') {
+      window.location.href = `/pdfviewer/web/viewer.html?file=${basePath}/${pdfFiles['/']}#page=1#zoom=automatic-zoom`;
+    } else {
+      // Construct the URL for the PDF file based on the endpoint
+      const pdfFile = pdfFiles[endpoint];
+      const pdfUrl = `${basePath}/${pdfFile}`;
+
+      // Set the iframe source to display the PDF
+      document.getElementById('pdf-js-viewer').src = `/pdfviewer/web/viewer.html?file=${pdfUrl}#page=1#zoom=automatic-zoom`;
+    }
+  </script>
+</body>
 </html>
+
+
